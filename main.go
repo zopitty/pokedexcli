@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-    fmt.Println("POKEDEX!!")
+    fmt.Println("WELCOME TO THE POKEDEX!!")
     repl.StartREPL()
 }
