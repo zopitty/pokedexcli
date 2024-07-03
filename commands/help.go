@@ -1,8 +1,12 @@
 package commands
 
-import "fmt"
+import (
+	"fmt"
 
-func commandHelp() error {
+	"github.com/zopitty/pokedexcli/config"
+)
+
+func commandHelp(cfg *config.Config) error {
     fmt.Println("=======================")
     fmt.Println("Welcome to the pokedex!")
     fmt.Println("Usage:")

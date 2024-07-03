@@ -1,11 +1,13 @@
 package commands
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
+
+	"github.com/zopitty/pokedexcli/config"
 )
 
-func commandExit() error {
+func commandExit(cfg *config.Config) error {
     fmt.Println("Exiting the Pokedex...")
     os.Exit(0)
     return nil
