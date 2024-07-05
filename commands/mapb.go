@@ -7,7 +7,7 @@ import (
 	"github.com/zopitty/pokedexcli/config"
 )
 
-func commandMapB(cfg *config.Config) error {
+func commandMapB(cfg *config.Config, args ...string) error {
     if cfg.PrevLocationURL == nil {
         return errors.New("this is the first page")
     }

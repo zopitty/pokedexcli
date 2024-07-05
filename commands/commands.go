@@ -5,7 +5,7 @@ import "github.com/zopitty/pokedexcli/config"
 type CliCommand struct {
     Name        string
     Description string
-    Callback    func(*config.Config) error
+    Callback    func(*config.Config, ...string) error
 }
 
 func GetCommands() map[string]CliCommand {
@@ -29,6 +29,11 @@ func GetCommands() map[string]CliCommand {
             Name:        "mapb",
             Description: "Display previous 20 areas",
             Callback:    commandMapB,
+        },
+        "explore": {
+            Name:        "explore {location area}",
+            Description: "show pokemon in the area",
+            Callback:    commandExplore,
         },
     }
 }

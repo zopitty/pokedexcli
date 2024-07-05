@@ -6,7 +6,7 @@ import (
 	"github.com/zopitty/pokedexcli/config"
 )
 
-func commandHelp(cfg *config.Config) error {
+func commandHelp(cfg *config.Config, args ...string) error {
     fmt.Println("=======================")
     fmt.Println("Welcome to the pokedex!")
     fmt.Println("Usage:")

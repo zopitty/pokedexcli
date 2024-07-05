@@ -6,7 +6,7 @@ import (
 	"github.com/zopitty/pokedexcli/config"
 )
 
-func commandMap(cfg *config.Config) error {
+func commandMap(cfg *config.Config, args...string) error {
 
     fmt.Println()
     fmt.Println("========================")

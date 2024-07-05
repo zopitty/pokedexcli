@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/zopitty/pokedexcli/commands"
 	"github.com/zopitty/pokedexcli/config"
@@ -19,8 +20,19 @@ func StartREPL(cfg *config.Config) {
         }
 
         input := scanner.Text()
-        if cmd, exists := cmds[input]; exists {
-            if err := cmd.Callback(cfg); err != nil {
+
+        parts := strings.Fields(input)
+
+        if len(parts) == 0 {
+            continue
+        }
+        args := []string{}
+        command := parts[0]
+        if len(parts) > 1 {
+            args = parts[1:]
+        }
+        if cmd, exists := cmds[command]; exists {
+            if err := cmd.Callback(cfg, args...); err != nil {
                 fmt.Println("Error:", err)
             }
         } else {
@@ -28,3 +40,4 @@ func StartREPL(cfg *config.Config) {
         }
     }
 }
+
