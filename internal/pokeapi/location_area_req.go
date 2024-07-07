@@ -65,7 +65,7 @@ func (c *Client) GetLocationArea(locationAreaName string) (LocationArea, error) 
 	// check the cache
 	dat, ok := c.cache.Get(fullURL)
 	if ok {
-		// cache in
+		// cache hit
 		locationArea := LocationArea{}
 		err := json.Unmarshal(dat, &locationArea)
 		if err != nil {
@@ -74,6 +74,7 @@ func (c *Client) GetLocationArea(locationAreaName string) (LocationArea, error) 
 
 		return locationArea, nil
 	}
+    // cache miss
 
 	req, err := http.NewRequest("GET", fullURL, nil)
 	if err != nil {
@@ -101,6 +102,7 @@ func (c *Client) GetLocationArea(locationAreaName string) (LocationArea, error) 
 		return LocationArea{}, err
 	}
 
+    // add to cache
     c.cache.Add(fullURL, dat)
 
 	return locationArea, nil

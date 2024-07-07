@@ -13,6 +13,7 @@ import (
 func main() {
     cfg := config.Config{
         PokeapiClient: pokeapi.NewClient(time.Hour),
+        CaughtPokemon: make(map[string]pokeapi.Pokemon),
     }
     fmt.Println("WELCOME TO THE POKEDEX!!")
     repl.StartREPL(&cfg)
