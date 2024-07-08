@@ -14,6 +14,7 @@ func commandHelp(cfg *config.Config, args ...string) error {
 		"explore",
 		"catch",
         "inspect",
+        "pokedex",
 		"exit",
 	}
 	cmds := GetCommands()
