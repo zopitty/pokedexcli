@@ -13,6 +13,7 @@ func commandHelp(cfg *config.Config, args ...string) error {
 		"mapb",
 		"explore",
 		"catch",
+        "inspect",
 		"exit",
 	}
 	cmds := GetCommands()
