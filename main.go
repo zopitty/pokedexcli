@@ -9,12 +9,12 @@ import (
 	"github.com/zopitty/pokedexcli/repl"
 )
 
-
 func main() {
-    cfg := config.Config{
-        PokeapiClient: pokeapi.NewClient(time.Hour),
-        CaughtPokemon: make(map[string]pokeapi.Pokemon),
-    }
-    fmt.Println("WELCOME TO THE POKEDEX!!")
-    repl.StartREPL(&cfg)
+	cfg := config.Config{
+		PokeapiClient: pokeapi.NewClient(time.Hour),
+		CaughtPokemon: make(map[string]pokeapi.Pokemon),
+	}
+	// fmt.Println("WELCOME TO THE POKEDEX!!")
+	fmt.Println("Welcome to the Pokedex!")
+	repl.StartREPL(&cfg)
 }
